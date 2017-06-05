@@ -24,7 +24,7 @@
 		*/
 
 		Route::group(['namespace' => 'Frontend'], function () {
-		require_once(__DIR__ . "\FrontRoutes.php");
+		require_once(__DIR__ . "/FrontRoutes.php");
 		});
 
 		/*
@@ -34,7 +34,7 @@
 		*/
 		Route::group(['middleware' => 'auth'], function () {
 			 Route::group(['namespace' => 'Backend'], function () {
-			 require_once(__DIR__ . "\BackRoutes.php");
+			 require_once(__DIR__ . "/BackRoutes.php");
 			});
 		});
 
@@ -45,7 +45,7 @@
 		*/
 		Route::group(['middleware' => 'auth'], function () {
 			 Route::group(['namespace' => 'Backend'], function () {
-			 require_once(__DIR__ . "\LaracastRoutes.php");
+			 require_once(__DIR__ . "/LaracastRoutes.php");
 			});
 		});
 
