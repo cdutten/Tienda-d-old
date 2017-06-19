@@ -15,7 +15,7 @@
 
 	/* Route::get('/manage', ['middleware' => ['permission:admin-panel'], 'uses' => 'Adminpanel_Controller@index']);*/
 
-	Route::get  ('/PanelBienvienida', 'Adminpanel_controller@bienvenida');
+	Route::get  ('/PanelBienvienida', 'Adminpanel_Controller@bienvenida');
     
 	Route::get  ('/admin', ['middleware' => ['laratrustmidl', 'auth'],'roles' => 'admin', 'uses' => 'Adminpanel_Controller@index']);
 
