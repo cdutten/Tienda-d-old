@@ -31,7 +31,7 @@ class Adminpanel_Controller extends Controller
     */
     public function index()
     {
-        $productos = productos::paginate(15);
+        $productos = productos::all();
         $usuarios = User::all();
         return view('admin.panelprincipal',
                     ['productos' => $productos,
