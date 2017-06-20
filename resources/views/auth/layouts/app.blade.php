@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+ 
 
     <!-- Scripts -->
     <script>
@@ -80,6 +82,17 @@
     @yield('content')
 
     <!-- Scripts -->
+
+
+    <script type="text/javascript" src="/js/vendor/jquery.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-es-AR.min.js"></script>
+
+    <script type="text/javascript" src="/js/main.js"></script>
     <script src="/js/app.js"></script>
+    
+
+   
 </body>
 </html>
