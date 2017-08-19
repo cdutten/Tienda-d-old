@@ -12,7 +12,7 @@
         "santigarcor/laratrust": "3.0.*",
         "laracasts/flash": "2.*",
         "gloudemans/shoppingcart": "2.2.*",
-        "gd": "*"
+        "ext-gd": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
