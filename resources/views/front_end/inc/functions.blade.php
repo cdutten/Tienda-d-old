@@ -48,6 +48,13 @@ function producto($producto){
 		                <h4><a href="#">@php echo $producto['nombre'] @endphp</a></h4>
 		        
 		                <p class=description> @php echo $producto['descripcion'] @endphp</p>
+		                <form action="/cart" method="POST" class="side-by-side">
+			              {!! csrf_field() !!}
+			              <input type="hidden" name="id" value="{{ $producto->id }}">
+			              <input type="hidden" name="nombre" value="{{ $producto->nombre }}">
+			              <input type="hidden" name="precio" value="{{ $producto->precio }}">
+			              <input type="submit" class="btn btn-success btn-lg pull-right" value="Agregar al Carrito">
+			   		 	</form>
 		            </div>
 		            <div class="ratings">
 		                <p class="pull-right">3 opiniones</p>
@@ -59,13 +66,6 @@ function producto($producto){
 		                    <span class="glyphicon glyphicon-star-empty"></span>
 		                    4.0 estrellas
 		                </p>
-		                <form action="/cart" method="POST" class="side-by-side">
-			              {!! csrf_field() !!}
-			              <input type="hidden" name="id" value="{{ $producto->id }}">
-			              <input type="hidden" name="nombre" value="{{ $producto->nombre }}">
-			              <input type="hidden" name="precio" value="{{ $producto->precio }}">
-			              <input type="submit" class="btn btn-success btn-lg pull-right" value="Agregar al Carrito">
-			   		 	</form>
 		            </div>
 		            
 		        </div>
