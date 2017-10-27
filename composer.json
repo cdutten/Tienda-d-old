@@ -11,7 +11,8 @@
         "intervention/image": "^2.3",
         "santigarcor/laratrust": "4.0.*",
         "laracasts/flash": "2.*",
-        "gloudemans/shoppingcart": "2.2.*"
+        "gloudemans/shoppingcart": "2.2.*",
+        "ext-gd": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -4,8 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+
     "hash": "64bbf56e57f3b9df6a425eabe9fdcf7e",
     "content-hash": "42719d1d8b06f2d6efd1f7f6ffb62117",
+
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1372,6 +1374,7 @@
         },
         {
             "name": "santigarcor/laratrust",
+
             "version": "4.0.3",
             "source": {
                 "type": "git",
@@ -1382,6 +1385,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/santigarcor/laratrust/zipball/5a029a4f4a5c3a4171a8ee1a8b06e466a3cf6d0b",
                 "reference": "5a029a4f4a5c3a4171a8ee1a8b06e466a3cf6d0b",
+
                 "shasum": ""
             },
             "require": {
@@ -1393,8 +1397,12 @@
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.2",
-                "phpunit/phpunit": "~4.1"
+
+                "illuminate/database": "~5.0",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.1",
+                "squizlabs/php_codesniffer": "2.*"
+
             },
             "type": "library",
             "extra": {
@@ -1437,6 +1445,7 @@
                 "roles"
             ],
             "time": "2017-07-26 16:52:20"
+
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3916,7 +3925,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.4"
+        "php": ">=5.6.4",
+        "ext-gd": "*"
     },
     "platform-dev": []
 }
