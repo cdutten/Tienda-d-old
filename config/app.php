@@ -166,7 +166,6 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
     	Illuminate\Auth\AuthServiceProvider::class,
-        Laratrust\LaratrustServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
@@ -223,7 +222,6 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
-        'Laratrust'   => Laratrust\LaratrustFacade::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,

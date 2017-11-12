@@ -9,7 +9,6 @@
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "^5.3",
         "intervention/image": "^2.3",
-        "santigarcor/laratrust": "4.0.*",
         "laracasts/flash": "2.*",
         "gloudemans/shoppingcart": "2.2.*",
         "ext-gd": "*"
