@@ -55,7 +55,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <ul class="nav navbar-nav">
               <li <?php if ($activePage == "Inicio")    {echo "class=active";} ?>> <a href="{{ url('inicio') }}">Inicio <span class="sr-only"> (actual) </span></a></li>
-              <li <?php if ($activePage == "Productos") {echo 'class=active';} ?>> <a href="{{ url('productos') }}">Productos</a></li>
+              <li <?php if ($activePage == "Productos") {echo 'class=active';} ?>> <a href="{{ url('Products') }}">Productos</a></li>
             </ul>
             <!-- Buscador -->
             <form class="navbar-form navbar-left" role="search" action="{{url('inicio/buscar')}}">

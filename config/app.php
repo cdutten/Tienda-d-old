@@ -166,13 +166,13 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
     	Illuminate\Auth\AuthServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
 
         /*
          * Package Service Providers...
          */
+        Laravel\Scout\ScoutServiceProvider::class,
 
 
         //

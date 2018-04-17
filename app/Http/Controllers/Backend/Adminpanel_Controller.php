@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use app\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\productos;
+use App\Product;
 use App\User;
 use Image;
 
@@ -20,21 +20,22 @@ class Adminpanel_Controller extends Controller
     {
         return view('admin.panelBienvenida');
     }
- /*
+
+    /*
     |--------------------------------------------------------------------------
     | Panel Principal VIEW
     |--------------------------------------------------------------------------
     |
-    | Este controlador es el resposable de mostrar el 
+    | Este controlador es el resposable de mostrar el
     | Panel principal y pasar los datos a la vista.
     |
     */
     public function index()
     {
-        $productos = productos::all();
+        $productos = Product::all();
         $usuarios = User::all();
         return view('admin.panelprincipal',
-                    ['productos' => $productos,
+                    ['Products' => $productos,
                      'usuarios' => $usuarios
                     ]);
     }
@@ -45,52 +46,45 @@ class Adminpanel_Controller extends Controller
     |--------------------------------------------------------------------------
     |
     | Cargar el Producto en la base de datos
-    | 
-    | 
+    |
+    |
     */
 
-    public function cargar(Request $request )
+    public function cargar (Request $request)
     {
 
         $this->validate($request, [
-            'nombre' => 'required|max:50|unique:productos',
-            'descripcionBreve' => 'required|max:50',
-            'descripcion' => 'required|min:10',
-            'precio' => 'required',
+            'name' => 'required|max:50|unique:Products',
+            'thumbnail_description' => 'required|max:50',
+            'description' => 'required|min:10',
+            'price' => 'required',
         ]);
 
-        $datos = request()->all();
-        $file = $request->file('imagen'); 
+        $datos = $request->all();
+        $file = $request->file('imagen');
 
-        
-        if( $file == null)
-        {
+        if ( $file == null) {
          $imgdflt= 1;
-        }
-        else
-        {
+        } else {
          $imgdflt= 0;
          $extension = $request->file('imagen')->getClientOriginalExtension();
          $img = Image::make($file);
          $img->resize(350, 250);
-         $img->save( public_path( 'imagen/'. $datos['nombre'] . '.' . $extension ));
-        }
-        
-        if ($imgdflt == 1) 
-        {
-            $imagenDir= "imagen/default.jpg";
-        }
-        else 
-        {
-            $imagenDir = 'imagen/'. $datos['nombre'] . "." . $extension;
+         $img->save( public_path( 'image/'. $datos['nombre'] . '.' . $extension ));
         }
 
-         productos::create([
-            'nombre' => $datos['nombre'],
-            'descripcionBreve' => $datos['descripcionBreve'],
-            'descripcion' => $datos['descripcion'],
-            'precio' => $datos['precio'],
-            'imagenDir' => $imagenDir,
+        if ($imgdflt == 1) {
+            $imagenDir= "image/default.jpg";
+        } else {
+            $imagenDir = 'image/'. $datos['nombre'] . "." . $extension;
+        }
+
+         Product::create([
+            'name' => $datos['name'],
+            'thumbnail_description' => $datos['thumbnail_description'],
+            'description' => $datos['description'],
+            'price' => $datos['price'],
+            'image_url' => $imagenDir,
             'dst' => $datos['dst'],
           ]);
 
@@ -102,20 +96,20 @@ class Adminpanel_Controller extends Controller
     |--------------------------------------------------------------------------
     |
     | Elminar el Producto de la base de datos
-    | 
+    |
     */
 
     public function borrar()
     {
         $datos = request()->all();
-       
-        // QUERY 
-        $producto = productos::find($datos['id']);
+
+        // QUERY
+        $producto = Product::find($datos['id']);
         $producto->delete();
         return redirect()->to('admin');
     }
 
-    
-    
+
+
 
 }

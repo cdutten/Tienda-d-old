@@ -59,7 +59,7 @@
                     </tbody>
                 </table>
              <button type="button" class="btn btn-success">Confirmar compra</button>
-             <a href="{{url("/productos")}}" ><button type="button" class="btn btn-info">Volver a Productos</button></a>
+             <a href="{{url("Products")}}" ><button type="button" class="btn btn-info">Volver a Productos</button></a>
             </div>
         </div>
       </div>

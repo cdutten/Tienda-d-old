@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\productos;
+use App\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Request;
@@ -17,19 +17,19 @@ class FrontEnd_Controller extends Controller
     //
 
     public function index(){
-        $productos = productos::all()->where('dst', '1');
-        return view('front_end.inicio',['productos' => $productos]);
+        $productos = Product::all()->where('dst', '1');
+        return view('front_end.inicio',['Products' => $productos]);
     }
  
     public function productos(){
-        $productos = productos::paginate(15);
-        return view('front_end.productos',['productos' => $productos]);
+        $productos = Product::paginate(15);
+        return view('front_end.Products',['Products' => $productos]);
     }
 
     public function productoX($pID){
         
-        $productos = productos::all()->where('id', $pID);
-        return view('front_end.producto',['productos' => $productos]);;
+        $productos = Product::all()->where('id', $pID);
+        return view('front_end.producto',['Products' => $productos]);;
         
     }
 
@@ -46,7 +46,7 @@ class FrontEnd_Controller extends Controller
 
     public function search($buscar){
         $buscar = urldecode($buscar);
-        $productosEncontrados = productos::select()
+        $productosEncontrados = Product::select()
                 ->where('nombre', 'LIKE', '%'.$buscar.'%')
                 ->orderBy('id', 'desc')
                 ->get();

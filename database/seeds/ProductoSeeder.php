@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\productos;
+use App\Product;
 
 class ProductoSeeder extends Seeder
 {
@@ -14,12 +14,12 @@ class ProductoSeeder extends Seeder
     public function run()
     {
 
-    	for ($i=1; $i <= 100; $i++) {
-             productos::create([
-            'nombre' => "Producto $i",
-            'descripcionBreve' => 'Descripcion breve',
-            'descripcion' => 'Descripcion completa y mayor a 10 letras',
-            'precio' => 10,
+    	for ($i=1; $i <= 30; $i++) {
+             Product::create([
+            'name' => "Producto $i",
+            'description_thumbnail' => 'Descripcion breve',
+            'description' => 'Descripcion completa y mayor a 10 letras',
+            'price' => 10,
           	]);
     	}
     }

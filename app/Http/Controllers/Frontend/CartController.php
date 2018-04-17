@@ -31,7 +31,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
     $cartItem = Cart::add($request->id, $request->nombre, 1, $request->precio);
-    Cart::associate($cartItem->rowId, \App\productos::class);
+    Cart::associate($cartItem->rowId, \App\Product::class);
     return redirect('carrito');
     }
 

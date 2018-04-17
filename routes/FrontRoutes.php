@@ -14,7 +14,7 @@
 	Route::get('/', 'FrontEnd_Controller@index');
 	Route::get('/inicio', 'FrontEnd_Controller@index');
 
-	Route::get('/productos', 'FrontEnd_Controller@productos' );
+	Route::get('/Products', 'FrontEnd_Controller@Products' );
 
 	Route::get('/producto/{pID}', 'FrontEnd_Controller@productoX');
 
